@@ -16,4 +16,6 @@ use App\Http\Controllers\TimeController;
 Route::get('/', function () {
     return view('welcome');
     Route::get('/', [TimeController::class, 'index']);
+    Route::get('/times/{time}/edit', [Timeroller::class, 'edit']);
+    Route::put('/times/{time}', [TimeController::class, 'update']);
 });
